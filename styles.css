@@ -1,0 +1,57 @@
+/* 
+    1. Have media queries and breakpoints based on the frameworks (bootstrp, tailwind..)
+        
+        /* Default: Extra-small devices such as small phones (less than 640px) 
+
+        /* Small devices such as large phones (640px and up)
+        @media only screen and (min-width: 640px) {
+            ...
+        }
+
+        /* Medium devices such as tablets (768px and up) 
+        @media only screen and (min-width: 768px) {
+            ...
+        }
+
+        /* Large devices such as laptops (1024px and up) 
+        @media only screen and (min-width: 1024px) {
+            ...
+        }
+
+        /* Largest devices such as desktops (1280px and up) 
+        @media only screen and (min-width: 1280px) {
+            ...
+        }
+
+
+    2. Use fluid design techniques such as clamp(), min(), and max()
+        this uses viewports to have flexible and scale with fonts too
+        https: //blog.logrocket.com/css-breakpoints-responsive-design/
+
+        /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.25,5,2,&s=0.75|0.5,1.5|2|3|4|6,s-l&g=s,l,xl,12 
+
+        :root {
+            --space-2xs: clamp(0.5625rem, 0.5408rem + 0.1087vi, 0.625rem);
+            --space-xs: clamp(0.875rem, 0.8533rem + 0.1087vi, 0.9375rem);
+            --space-s: clamp(1.125rem, 1.0815rem + 0.2174vi, 1.25rem);
+            --space-m: clamp(1.6875rem, 1.6223rem + 0.3261vi, 1.875rem);
+            --space-l: clamp(2.25rem, 2.163rem + 0.4348vi, 2.5rem);
+            --space-xl: clamp(3.375rem, 3.2446rem + 0.6522vi, 3.75rem);
+            --space-2xl: clamp(4.5rem, 4.3261rem + 0.8696vi, 5rem);
+            --space-3xl: clamp(6.75rem, 6.4891rem + 1.3043vi, 7.5rem);
+
+            /* One-up pairs 
+            --space-2xs-xs: clamp(0.5625rem, 0.4321rem + 0.6522vi, 0.9375rem);
+            --space-xs-s: clamp(0.875rem, 0.7446rem + 0.6522vi, 1.25rem);
+            --space-s-m: clamp(1.125rem, 0.8641rem + 1.3043vi, 1.875rem);
+            --space-m-l: clamp(1.6875rem, 1.4049rem + 1.413vi, 2.5rem);
+            --space-l-xl: clamp(2.25rem, 1.7283rem + 2.6087vi, 3.75rem);
+            --space-xl-2xl: clamp(3.375rem, 2.8098rem + 2.8261vi, 5rem);
+            --space-2xl-3xl: clamp(4.5rem, 3.4565rem + 5.2174vi, 7.5rem);
+
+            /* Custom pairs 
+            --space-s-l: clamp(1.125rem, 0.6467rem + 2.3913vi, 2.5rem);
+        }
+
+*/
+
