@@ -38,13 +38,13 @@ function drawGame() {
   // Draw the circle
   ctx.beginPath();
   ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
-  ctx.fillStyle = 'red';
+  ctx.fillStyle = '#4cc9f0';
   ctx.fill();
   ctx.closePath();
 
   // Draw the score
   ctx.font = '16px Arial';
-  ctx.fillStyle = '#333';
+  ctx.fillStyle = '#fff';
   ctx.fillText(`Score: ${score}`, 10, 20);
 }
 
