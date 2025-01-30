@@ -1,0 +1,96 @@
+/* Cyberpunk Background */
+body {
+  background: url("/assets/cyberpunk-bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #00ffea;
+  font-family: "Orbitron", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Dashboard Grid */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 15px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 30px #00ffea;
+  position: relative;
+}
+
+/* Holographic Map */
+.top-panel {
+  grid-column: span 2;
+  text-align: center;
+  padding: 10px;
+  background: rgba(10, 10, 30, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 15px cyan;
+}
+
+.holo-map img {
+  width: 300px;
+  filter: drop-shadow(0 0 10px cyan);
+}
+
+/* Navigation (Left Panel) */
+.left-panel {
+  background: rgba(10, 10, 40, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 15px magenta;
+}
+
+.nav-btn {
+  display: block;
+  background: transparent;
+  border: 2px solid magenta;
+  padding: 10px;
+  margin: 10px;
+  color: #ff00ff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: magenta;
+  color: black;
+  box-shadow: 0 0 10px magenta;
+}
+
+/* Main Content Panel */
+.right-panel {
+  padding: 20px;
+  background: rgba(20, 10, 40, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ffea;
+}
+
+/* Terminal (Bottom Panel) */
+.bottom-panel {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+}
+
+.terminal-container {
+  border: 2px solid lime;
+  background: black;
+  width: 90%;
+  max-width: 900px;
+  height: 300px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 0 20px lime;
+}

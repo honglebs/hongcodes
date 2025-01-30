@@ -3,8 +3,8 @@ import React from "react";
 function Contact() {
   return (
     <div>
-      <h2>📡 Contact Me</h2>
-      <p>Reach out via email or social media!</p>
+      <h2>📡 Ground Control</h2>
+      <p>Communications channel open. Reach out via encrypted channels.</p>
     </div>
   );
 }

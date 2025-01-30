@@ -3,8 +3,8 @@ import React from "react";
 function Blog() {
   return (
     <div>
-      <h2>📜 Blog</h2>
-      <p>Read my latest posts about tech and aerospace!</p>
+      <h2>📜 Flight Logs</h2>
+      <p>Commander's log. Documenting all expeditions and findings.</p>
     </div>
   );
 }
