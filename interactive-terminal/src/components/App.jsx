@@ -8,13 +8,20 @@ function App() {
   const [page, setPage] = useState("terminal");
 
   return (
-    <div className="container">
+    <div className="app-container">
       <h1 className="title">🚀 Cyberpunk Space Terminal</h1>
+      
+      {/* Ensure only one instance of TerminalUI is rendered */}
       {page === "terminal" && <TerminalUI setPage={setPage} />}
       {page === "projects" && <Projects />}
       {page === "blog" && <Blog />}
       {page === "contact" && <Contact />}
-      <button onClick={() => setPage("terminal")}>Back to Terminal</button>
+      
+      {page !== "terminal" && (
+        <button className="back-button" onClick={() => setPage("terminal")}>
+          Back to Terminal
+        </button>
+      )}
     </div>
   );
 }

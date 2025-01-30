@@ -1,68 +1,64 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
+  background-color: #0a0f1d;
+  color: #00ff00;
+  font-family: "Courier New", monospace;
   margin: 0;
+  padding: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.app-container {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.title {
+  font-size: 2rem;
+  color: cyan;
+  text-shadow: 0px 0px 5px lime;
+  margin-bottom: 20px;
+}
+
+.terminal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.terminal-container {
+  border: 2px solid lime;
+  padding: 10px;
+  background-color: black;
+  box-shadow: 0 0 15px lime;
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  overflow: hidden;
+  /* Ensures no extra scrolling */
+  border-radius: 10px;
+  text-align: left;
+}
+
+.back-button {
+  background: black;
+  border: 2px solid lime;
+  padding: 10px;
+  margin-top: 20px;
+  color: lime;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-size: 16px;
+  transition: all 0.3s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.back-button:hover {
+  background: lime;
+  color: black;
 }
