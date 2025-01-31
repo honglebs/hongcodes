@@ -1,18 +1,54 @@
-/* Cyberpunk Background */
+/* === Cyberpunk Background & Global Settings === */
 body {
-  background: url("/assets/cyberpunk-bg.jpg") no-repeat center center fixed;
-  background-size: cover;
+  background: #08081a;
   color: #00ffea;
   font-family: "Orbitron", sans-serif;
+  text-shadow: 0 0 5px #00ffea, 0 0 10px #00ffea;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow: hidden;
 }
 
-/* Dashboard Grid */
+/* Background Animation */
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(10, 10, 30, 1) 0%, rgba(5, 5, 20, 1) 100%);
+  z-index: -1;
+}
+
+/* === Subtle Scanline Effect (CRT Display) === */
+.scanlines::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(0deg, rgba(0, 255, 255, 0.05) 0px, rgba(0, 255, 255, 0.05) 2px, transparent 2px, transparent 4px);
+  z-index: 9999;
+  pointer-events: none;
+  animation: scan 5s linear infinite;
+}
+
+@keyframes scan {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+/* === Dashboard Layout === */
 .dashboard {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -27,11 +63,11 @@ body {
   position: relative;
 }
 
-/* Holographic Map */
+/* === Holographic Top Panel === */
 .top-panel {
   grid-column: span 2;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
   background: rgba(10, 10, 30, 0.9);
   border-radius: 10px;
   box-shadow: 0 0 15px cyan;
@@ -40,9 +76,21 @@ body {
 .holo-map img {
   width: 300px;
   filter: drop-shadow(0 0 10px cyan);
+  animation: glow 1.5s infinite alternate;
 }
 
-/* Navigation (Left Panel) */
+/* Glowing Animation */
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 10px cyan);
+  }
+
+  to {
+    filter: drop-shadow(0 0 20px cyan);
+  }
+}
+
+/* === Left Panel (Navigation) === */
 .left-panel {
   background: rgba(10, 10, 40, 0.9);
   padding: 20px;
@@ -51,39 +99,62 @@ body {
   box-shadow: 0 0 15px magenta;
 }
 
+/* Cyberpunk Navigation Buttons */
 .nav-btn {
   display: block;
   background: transparent;
   border: 2px solid magenta;
-  padding: 10px;
+  padding: 12px;
   margin: 10px;
   color: #ff00ff;
   font-size: 1rem;
   cursor: pointer;
-  transition: 0.3s;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 0 0 5px #ff00ff;
 }
 
 .nav-btn:hover {
   background: magenta;
   color: black;
-  box-shadow: 0 0 10px magenta;
+  box-shadow: 0 0 20px magenta;
+  transform: scale(1.05);
 }
 
-/* Main Content Panel */
+/* === Main Content Panel === */
 .right-panel {
   padding: 20px;
   background: rgba(20, 10, 40, 0.9);
   border-radius: 10px;
   box-shadow: 0 0 15px #00ffea;
+  animation: panel-flicker 3s infinite alternate;
 }
 
-/* Terminal (Bottom Panel) */
+/* Panel Flicker Effect */
+@keyframes panel-flicker {
+  0% {
+    box-shadow: 0 0 15px #00ffea;
+  }
+
+  50% {
+    box-shadow: 0 0 25px #00ffea;
+  }
+
+  100% {
+    box-shadow: 0 0 15px #00ffea;
+  }
+}
+
+/* === Terminal (Bottom Panel) === */
 .bottom-panel {
   grid-column: span 2;
   display: flex;
   justify-content: center;
 }
 
+/* Futuristic Terminal */
 .terminal-container {
   border: 2px solid lime;
   background: black;
@@ -92,5 +163,51 @@ body {
   height: 300px;
   border-radius: 10px;
   text-align: left;
+  padding: 10px;
   box-shadow: 0 0 20px lime;
+  overflow: hidden;
+  animation: terminal-flicker 2s infinite alternate;
+}
+
+/* Terminal Text Flicker */
+@keyframes terminal-flicker {
+  0% {
+    box-shadow: 0 0 20px lime;
+  }
+
+  50% {
+    box-shadow: 0 0 25px lime;
+  }
+
+  100% {
+    box-shadow: 0 0 20px lime;
+  }
+}
+
+/* Terminal Typewriter Effect */
+.terminal-text {
+  font-family: "Courier New", monospace;
+  color: #00ff00;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #00ff00;
+  animation: typing 3s steps(30, end), blink 0.5s infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* Cursor blinking */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
