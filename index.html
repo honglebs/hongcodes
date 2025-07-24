@@ -1,28 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Hong Le | Coming Soon</title>
+    <title>Hong Le</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="hero">
-        <div class="overlay">
-            <div class="content">
-                <h1>Hong Le</h1>
-                <h2>Software Engineer | Cybersecurity Enthusiast</h2>
-                <p class="coming-soon">✈️ A new site is taking off soon! 🚀</p>
-                <p>In the meantime, feel free to <a href="https://www.linkedin.com" target="_blank">connect on LinkedIn</a>
-                    or <a href="https://github.com" target="_blank">check out my GitHub</a>.</p>
-                <h3>Play This Game While You Wait!</h3>
-                <div id="game-container">
-                    <canvas id="gameCanvas"></canvas>
-                </div>
+    <div class="glitch-bg"></div>
+
+    <header>
+        <h1 class="glitch" data-text="Hong Le">Hong Le</h1>
+        <p class="subtitle">Software Engineer • Cybersecurity Researcher • Pilot-in-Training</p>
+    </header>
+
+    <!-- about section with typing effect -->
+    <section class="about">
+        <div class="holo-card">
+            <h2>👾 About Me</h2>
+            <p id="typing-text"></p>
+            <span class="cursor">|</span>
+        </div>
+    </section>
+
+    <!-- featured work -->
+    <section class="featured-work">
+        <h2>💡 Featured Projects</h2>
+        <div class="project-list">
+            <div class="project-card">
+                <h3>🚀 Pacman Path Traversal</h3>
+                <p>Optimized pathfinding algorithms using A* & Dijkstra's techniques @UCB.</p>
+                <a href="https://github.com/honglebs/Pacman-Path-Traversal" target="_blank">>Start Game</a>
+            </div>
+            <div class="project-card">
+                <h3>🔐 Predict Botnet</h3>
+                <p>Developed a machine learning model to detect malicious botnet activities @CSUF DS Lab.</p>
+                <a href="https://github.com/honglebs/PredictBotnet" target="_blank">>Launch Detection</a>
+            </div>
+            <div class="project-card">
+                <h3>🌍 WalkPhilly</h3>
+                <p>Built a geospatial web app for safe pedestrian routes, attracting 200+ users @Niantic Labs Inc.</p>
+                <a href="https://github.com/honglebs/walk-philly" target="_blank">>View Project</a>
             </div>
         </div>
+    </section>
+
+    <!-- socials -->
+    <section class="socials">
+        <h2>🌐 Connect with Me</h2>
+        <a href="https://www.linkedin.com/in/hong-le-919527147/" class="social-link" target="_blank">LinkedIn</a>
+        <a href="https://github.com/honglebs" class="social-link" target="_blank">GitHub</a>
+        <a href="https://hongcodes.com" class="social-link" target="_blank">Portfolio</a>
+    </section>
+
+    <!-- floating computer -->
+    <!-- <div class="floating-computer" id="computer">
+
+    </div> -->
+
+    <!-- cube representing the floating computer  -->
+    <!-- https://stackoverflow.com/questions/58577318/how-to-rotate-a-3d-cube-along-x-axis-using-css -->
+    <div class="wrapper">
+        <div class="cube">
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+        </div>
     </div>
+
+
+    <!-- inside terminal full screen -->
+    <div class="terminal-container" id="terminal">
+        <div class="terminal-grid"></div>
+        <div class="scanlines"></div>
+        <div class="terminal-loading glitch">Initializing System Boot...</div>
+        <div class="loading-bar">
+            <div class="loading-fill"></div>
+        </div>
+        <div class="terminal-output" id="terminal-output"></div>
+        <div class="terminal-input-wrapper">
+            <span class="terminal-prompt">user@cybersynthwave:~$</span>
+            <input type="text" class="terminal-input" id="terminal-input" autofocus>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
